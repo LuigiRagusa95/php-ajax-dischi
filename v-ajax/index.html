@@ -20,7 +20,24 @@
 			</header>
 			<main>
 				<div class="container">
-					<ul></ul>
+					<ul>
+						<template v-if="albums == null">
+							<span class="loading">Loading</span>
+						</template>
+						<template v-else>
+							<li class="card" v-for="(album,index) in albums" :key="`card-${index}`">
+								<div class="card-image">
+									<div>
+										<img :src="album.poster" alt="image description" />
+									</div>
+								</div>
+								<h3 class="card-title">{{album.title}}</h3>
+								<p class="card-author">{{album.author}}</p>
+								<h4 class="card-year">{{album.year}}</h4>
+								<div class="card-genre">{{album.genre}}</div>
+							</li>
+						</template>
+					</ul>
 				</div>
 			</main>
 		</div>

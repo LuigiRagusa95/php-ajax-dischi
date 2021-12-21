@@ -115,3 +115,8 @@ main .container > ul {
 .card-year {
 	font-size: 1.125rem;
 }
+
+.loading {
+	display: flex;
+	color: #ffffff;
+}
